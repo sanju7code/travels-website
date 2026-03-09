@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sri Vari Travels</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family: 'Poppins', sans-serif;
+background:#f5f5f5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#0c8f3f;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:black;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#0c8f3f;
+transform:scale(1.1);
+}
+
+.callbtn{
+background:linear-gradient(45deg,#ff7a00,#ffb347);
+color:white;
+padding:12px 22px;
+border-radius:30px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.callbtn:hover{
+transform:scale(1.08);
+}
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+margin:0;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.formbox{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:30px;
+display:flex;
+gap:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+input,select{
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+background:#0c8f3f;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#066d2d;
+}
+
+.section{
+padding:60px;
+text-align:center;
+}
+
+.fleet{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+width:280px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card h3{
+margin:10px;
+}
+
+.destinations{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.destinations img{
+width:300px;
+height:200px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.contact{
+background:#0c8f3f;
+color:white;
+padding:50px;
+}
+
+footer{
+background:black;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Sri Vari Travels</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#fleet">Fleet</a>
+<a href="#tour">Tours</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="callbtn">📞 9840681739</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Travel With Comfort</h1>
+
+<p>Car • Tempo Traveller • Mini Bus • 32 Seater Bus</p>
+
+<div class="formbox">
+
+<input id="pickup" placeholder="Pickup Location">
+
+<input id="drop" placeholder="Destination">
+
+<select id="trip">
+<option>Local Trip</option>
+<option>Outstation</option>
+<option>Tour Package</option>
+</select>
+
+<input id="date" type="date">
+
+<button onclick="sendInquiry()">Inquire</button>
+
+</div>
+
+</section>
+
+
+<section class="section" id="fleet">
+
+<h2>Our Vehicles</h2>
+
+<div class="fleet">
+
+<div class="card">
+<img src="data:image/jpeg;base64,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">
+<h3>Car</h3>
+<p>Comfortable for family trips</p>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc7QSKX9T1CTTXZeKJCZTNlPhxe0dyW5rC7A&s">
+<h3>Tempo Traveller</h3>
+<p>12 / 17 Seater</p>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMdkfQKIOvHqmLlLgBokOiyzN1JV1uj9Ue-Q&s">
+<h3>Mini Bus</h3>
+<p>21 /27 /33  Seater</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="tour">
+
+<h2>Popular Tour Destinations</h2>
+
+<div class="destinations">
+
+<img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2" onclick="showPlace('ooty')">
+<p>Ooty</p>
+
+<img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944" onclick="showPlace('kerala')">
+<p>Kerala</p>
+
+<img src="https://images.unsplash.com/photo-1627894483216-2138af692e32" onclick="showPlace('kodaikanal')">
+<p>Kodaikanal</p>
+
+</div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+<h2>Contact Sri Vari Travels</h2>
+
+<p>Phone: 9840681739</p>
+
+<p>Email: srivaritravels@gmail.com</p>
+
+<p>Location: Chennai, Tamil Nadu</p>
+
+</section>
+
+
+<footer>
+
+© 2026 Sri Vari Travels
+
+</footer>
+
+
+<script>
+
+function sendInquiry(){
+
+let pickup=document.getElementById("pickup").value
+let drop=document.getElementById("drop").value
+let trip=document.getElementById("trip").value
+let date=document.getElementById("date").value
+
+let message="Hello Sri Vari Travels,%0A Pickup: "+pickup+"%0A Destination: "+drop+"%0A Trip: "+trip+"%0A Date: "+date
+
+window.open("https://wa.me/919840681739?text="+message)
+
+}
+function showPlace(place){
+
+if(place==="ooty"){
+alert("Ooty is known as the Queen of Hill Stations. Famous for tea gardens, cool climate, lakes and mountain views. It is perfect for family trips and honeymoon tours.");
+}
+
+if(place==="kerala"){
+alert("Kerala is known as God's Own Country. Famous for backwaters, houseboats, beaches and beautiful nature. A perfect destination for relaxation and tourism.");
+}
+
+if(place==="kodaikanal"){
+alert("Kodaikanal is called the Princess of Hill Stations. Famous for Kodai Lake, pine forests, waterfalls and cool weather. A peaceful place for nature lovers.");
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
